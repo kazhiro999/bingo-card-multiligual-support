@@ -1,0 +1,142 @@
+/* ビンゴカード全体のコンテナ */
+.bingo-card {
+  background-color: #ffffff;
+  padding: 12px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  max-width: fit-content;
+}
+
+/* ヘッダー部分 */
+.bingo-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.bingo-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  color: #000000;
+  text-align: center;
+  margin: 0;
+  line-height: normal;
+}
+
+.bingo-status {
+  font-size: 14px;
+  font-weight: 600;
+  color: #007700;
+  text-align: center;
+}
+
+/* リーチ・ビンゴカウンター */
+.bingo-counters {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 12px;
+  background-color: #f8f9fa;
+  border: 1px solid #e9ecef;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+}
+
+.counter-item {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.counter-label {
+  font-size: 12px;
+  font-weight: 500;
+  color: #495057;
+}
+
+.counter-value {
+  font-size: 14px;
+  font-weight: 700;
+  color: #000000;
+  min-width: 20px;
+  text-align: center;
+  padding: 2px 6px;
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  border-radius: 3px;
+}
+
+/* ビンゴグリッド */
+.bingo-grid {
+  width: 200px;
+  height: 200px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(5, 1fr);
+  border: 1px solid #000000;
+  position: relative;
+}
+
+/* コントロール部分 */
+.bingo-controls {
+  margin-top: 8px;
+}
+
+.reset-button {
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  color: #000000;
+  padding: 8px 16px;
+  font-size: 12px;
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.reset-button:hover {
+  background-color: #f0f0f0;
+}
+
+.reset-button:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: 2px;
+}
+
+.reset-button:active {
+  background-color: #e0e0e0;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 480px) {
+  .bingo-card {
+    padding: 8px;
+  }
+  
+  .bingo-grid {
+    width: 160px;
+    height: 160px;
+  }
+
+  .bingo-counters {
+    gap: 12px;
+    padding: 6px 8px;
+  }
+
+  .counter-label {
+    font-size: 11px;
+  }
+
+  .counter-value {
+    font-size: 12px;
+    min-width: 18px;
+    padding: 1px 4px;
+  }
+} 

@@ -1,0 +1,151 @@
+/* ビンゴセル */
+.bingo-cell {
+  width: 40px;
+  height: 40px;
+  background-color: #ffffff;
+  border: 1px solid #000000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-sizing: border-box;
+}
+
+/* セルの内容 */
+.cell-content {
+  font-family: 'Inter', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  color: #000000;
+  line-height: normal;
+  text-align: center;
+  user-select: none;
+}
+
+/* 選択状態のスタイル */
+.bingo-cell.selected {
+  background-color: #e6f3ff;
+  border-color: #0066cc;
+}
+
+.bingo-cell.selected .cell-content {
+  color: #0066cc;
+  font-weight: 600;
+}
+
+/* FREEマスのスタイル */
+.bingo-cell.free {
+  background-color: #f0f8ff;
+  cursor: default;
+}
+
+.bingo-cell.free .cell-content {
+  font-weight: 600;
+  color: #0066cc;
+}
+
+/* ビンゴライン達成時のスタイル */
+.bingo-cell.bingo-line {
+  background-color: #fffacd;
+  border-color: #ffd700;
+  animation: bingo-glow 1s ease-in-out infinite alternate;
+}
+
+.bingo-cell.bingo-line .cell-content {
+  color: #b8860b;
+  font-weight: 700;
+}
+
+/* 選択インジケーター */
+.selection-indicator {
+  position: absolute;
+  top: 3px;
+  right: 3px;
+  font-size: 10px;
+  color: #0066cc;
+  font-weight: bold;
+  line-height: 1;
+}
+
+/* ホバー効果 */
+.bingo-cell:not(.free):hover {
+  background-color: #f5f5f5;
+  border-color: #666666;
+}
+
+.bingo-cell.selected:hover {
+  background-color: #d1e7ff;
+}
+
+/* フォーカス状態 */
+.bingo-cell:focus {
+  outline: 2px solid #0066cc;
+  outline-offset: -2px;
+  z-index: 1;
+}
+
+/* アクティブ状態 */
+.bingo-cell:not(.free):active {
+  transform: scale(0.95);
+}
+
+/* ビンゴアニメーション */
+@keyframes bingo-glow {
+  from {
+    box-shadow: 0 0 5px rgba(255, 215, 0, 0.5);
+  }
+  to {
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+  }
+}
+
+/* 高コントラストモード対応 */
+@media (prefers-contrast: high) {
+  .bingo-cell {
+    border-width: 2px;
+  }
+  
+  .bingo-cell.selected {
+    background-color: #000000;
+    color: #ffffff;
+  }
+  
+  .bingo-cell.selected .cell-content {
+    color: #ffffff;
+  }
+}
+
+/* 動きを減らす設定に対応 */
+@media (prefers-reduced-motion: reduce) {
+  .bingo-cell {
+    transition: none;
+  }
+  
+  .bingo-cell.bingo-line {
+    animation: none;
+  }
+  
+  .bingo-cell:active {
+    transform: none;
+  }
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 480px) {
+  .bingo-cell {
+    width: 32px;
+    height: 32px;
+  }
+  
+  .cell-content {
+    font-size: 11px;
+  }
+  
+  .selection-indicator {
+    font-size: 8px;
+    top: 2px;
+    right: 2px;
+  }
+} 
