@@ -8,8 +8,10 @@ Figmaデザインを基にしたアクセシブルな5×5ビンゴカードのRe
 - **FREEマス**: 中央のセルは常に選択状態
 - **クリック選択**: セルをクリックして選択/解除
 - **ビンゴ判定**: 横・縦・斜めのライン完成を自動検出
-- **リセット機能**: カードを初期状態に戻す
-- **アニメーション**: ビンゴライン達成時の視覚効果
+- **リーチ検出**: 4/5達成ラインの表示
+- **カウンター**: リーチ数とビンゴ数の表示
+- **リセット機能**: カードを初期状態に戻す（新しい番号で再生成）
+- **多言語対応**: 日本語/英語の切り替え機能
 
 ## アクセシビリティ機能
 
@@ -38,6 +40,7 @@ Figmaデザインを基にしたアクセシブルな5×5ビンゴカードのRe
 - **CSS**: バニラCSS（Tailwind不使用）
 - **フォント**: Inter（Figmaデザイン準拠）
 - **ブラウザ対応**: モダンブラウザ
+- **Fisher-Yates アルゴリズム**: 重複のない数字生成
 
 ## 起動方法
 
@@ -56,4 +59,4 @@ npm start
 - [WCAG 2.2](https://waic.jp/translations/WCAG22/)
 - [WAI-ARIA Authoring Practices](https://www.w3.org/WAI/ARIA/apg/)
 - [eslint jsx a11y](https://www.npmjs.com/package/eslint-plugin-jsx-a11y)
-- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/) 
+- [Lighthouse](https://developer.chrome.com/docs/lighthouse/overview/)
